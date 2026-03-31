@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --first-color: #3b82f6;
+    --second-color: #ffffff;
+    --third-color: #0f172a;
+    --p:rgba(161, 161, 161, 0.625);
+
+    /* Animated background */
+    --bg: linear-gradient(270deg, #e0f2fe, #146dda, #0a41af);
+
+    /* Glass box */
+    --box: rgba(255, 255, 255, 0.316);
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    background-size: 400% 400%;
+    animation: bgMove 10s ease infinite;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* MAIN CENTER */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* BOX */
+.box {
+    background: var(--box);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Glow shadow */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    /* Floating animation */
+     animation: fadeIn 2s ease forwards;
+    transition: 0.4s;
+}
+
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(60px);
+    }
+    100% { opacity: 1; transform: translateY(0);
+     }
+    
+}
+
+/* HOVER ON BOX */
+.box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+}
+
+/* TITLE */
+.box h2 {
+    font-size: 30px;
+    font-weight: bold;
+
+    
+    background: linear-gradient(90deg, #124ca9, #d9dee6);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+/* SPAN */
+.box h2 span {
+    color: var(--third-color);
+    -webkit-text-fill-color: var(--third-color);
+}
+
+/* TEXT */
+.box p {
+    margin: 10px;
+    color: var(--p);
+    line-height: 1.1;
+    margin-bottom: 35px;
+}
+
+/* BUTTON */
+.box button {
+    padding: 12px 25px;
+    border: none;
+    background: linear-gradient(135deg, #3b82f6, #0a41af);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+   
+}
+
+
+/* BUTTON HOVER */
+.box button:hover {
+    transform:scale(1.1);
+    box-shadow: 0 10px 30px rgba(10, 65, 175, 0.6);
+    background: var(--third-color);
+}
+
+/* BUTTON CLICK */
+.box button:active {
+    transform: scale(0.95);
+}
